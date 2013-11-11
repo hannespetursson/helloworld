@@ -9,9 +9,10 @@ export DISPLAY=:99
 #java -jar target/helloworld-1.0-SNAPSHOT-jar-with-dependencies.jar &
 #PID=$!
 
+export PORT = http://hapworldtwo.herokuapp.com/
 # Run tests
 mvn test-compile failsafe:integration-test
 
 # Clean up
 #kill -9 $PID
-#sudo bin/xvfb stop
+sudo bin/xvfb stop

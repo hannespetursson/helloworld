@@ -20,6 +20,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class ChromeTestTitleIT {
     private static ChromeDriverService service;
     private WebDriver driver;
+    private String baseUrl;
+
 
     @BeforeClass
     public static void createAndStartService() throws IOException {
@@ -37,6 +39,7 @@ public class ChromeTestTitleIT {
 
      @Before
      public void createDriver() {
+         baseUrl = System.getenv("STAGING_SERVER");//"http://hapworldtwo.herokuapp.com/";
          driver = new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
      }
 
@@ -47,7 +50,7 @@ public class ChromeTestTitleIT {
 
      @Test
      public void testTitle() throws Exception {
-      driver.get("http://hapworldtwo.herokuapp.com/");
+      driver.get(baseUrl);
       assertEquals("Hello world", driver.getTitle());
     }
 }
