@@ -47,7 +47,7 @@ public class ChromeTestTitleIT {
 
      @Test
      public void testTitle() throws Exception {
-      driver.get("http://localhost:4567");
+      driver.get("http://hapworldtwo.herokuapp.com/");
       assertEquals("Hello world", driver.getTitle());
     }
 }
